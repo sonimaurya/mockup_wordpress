@@ -1,0 +1,326 @@
+@import '__mixin.scss';
+@import '__variable.scss';
+@import '__fonts.scss';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:$primary-text-color;
+}
+
+.wrapper{
+    @include layout($direction:column);
+    .header{
+        @include layout($direction:column,$padding:0 0 145px 0);
+        //position: relative;
+        background-image: url(../images/home/banner.jpg);
+        background-size: 100% 100%;
+        &-nav{
+            .mobile-menu{
+                display: none;
+            }
+            @include layout($direction:row,$justify:space-between,$margin:2px 50px 0 50px); 
+            &-logo{
+                @include layout($direction:row,$justify:flex-start); 
+               
+            }
+            &-menu{
+                @include layout($direction:row,$justify:flex-end,$padding:20px);
+                &-ul{
+                    list-style-type: none;
+                    @include layout($direction:row,$justify:space-between); 
+                    &-li{
+                        @include layout($margin:10px);
+                        &-a{
+                            @include text-property($size:18px,
+                            $color:$menu-text-color,$font:Barlow-medium-bold);
+                            text-decoration: none;
+                            &:hover{
+                            @include text-property($size:18px,$font:Barlow-bold);
+                              
+                            }
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+        &-text{
+            text-align: center;
+            @include layout($direction:column,$padding:138px 0 0 0,$justify:center);
+           &-big-title{
+            @include layout($padding:0 0 10px 0);
+           @include text-property($size:72px,$color:$secondary-text-color,$font:Barlow-semi-bold);
+           }
+           &-small-title{
+            @include text-property($size:20px,$color:$secondary-text-color,
+            $font:Barlow-medium-bold);
+           }
+           &-button{
+               margin-top: 52px;
+               @include textButton();
+           }
+        }
+    }
+
+    .services{
+        background-image: url(../images/home/services_bg.jpg);
+        background-size: 100% 100%;
+        height: 938px;
+        //position: relative;
+        &-about-us{
+            border-radius: 10px;
+            @include layout($padding:25px 30px,$justify:center,$direction:column);
+            background-color: $services-background-color;
+            width: 75%;
+            // top:80%;
+            // left:12.5%;
+            margin-top: -4.5%;
+            margin-left: 12.5%;
+            //position: absolute;
+            &-top{
+                text-align: center;
+                .top-heading{
+                    @include text-property($size:40px,$color:$top-heading-color
+                    ,$font:Barlow-semi-bold);
+                }
+                .horizontal-line{
+                   @include headingLine;
+                }
+            }
+            &-box{
+                @include aboutUsCard;
+            }
+            
+        }
+        &-products{
+            margin-top: 5%;
+            &-heading{
+                text-align: center;
+               
+                    .top-heading{
+                        @include text-property($size:40px,$color:$secondary-text-color
+                        ,$font:Barlow-semi-bold);
+                    }
+                    .horizontal-line{
+                       @include headingLine;
+                    }
+                  
+            }
+            &-box{
+            @include layout($direction:row,$justify:space-between,$padding:10px);
+            &-l{
+               width: 50%; 
+               .para{
+                line-height: 2;
+                text-align: left;
+                padding-left:63px;
+                &-button{
+                    @include textButton($width:36%,$height:58px);
+                    margin-top:46px;
+                }
+             .para-text{
+                 @include text-property($text-transform:unset,$font:Barlow-regular,$size:24px);
+             }
+            }              
+            }
+            &-r{
+                width: 50%;
+                .services-products-slideshow{
+                    max-width: 1000px;
+                    position: relative;
+                    margin: auto;
+                    &-slides{
+                        padding: 0px 50px;
+                        display: block;
+                        .slideshow-slides-shadow{
+                            width:85%;
+                            height: 248px;
+                            background: linear-gradient(45deg, #908d8d0a, #80787854, #bfbaba26);
+                            border-radius: 15px;
+                            //padding:0 30px;
+                            margin-left: -28px;
+                            position: absolute;
+                            margin-top:30px;
+                        }
+                        .slideshow-img{
+                            position: relative;
+                            width: 90%;
+                            height: 300px;
+                            border-radius: 15px;
+                            }
+                    }
+                    .fade{
+                        animation-name: fade;
+                        animation-duration: 1.5s;
+                    }
+                    @-webkit-keyframes fade {
+                        from {opacity: .4} 
+                        to {opacity: 1}
+                      }
+                      
+                      @keyframes fade {
+                        from {opacity: .4} 
+                        to {opacity: 1}
+                      }
+                }
+                .slideshow-dot-box{
+                    text-align: center;
+                    margin-top: 30px;
+                    .dot{
+                        cursor: pointer;
+                        height: 15px;
+                        width: 15px;
+                        margin: 0 2px;
+                        background-color:$top-heading-color;
+                        border-radius: 50%;
+                        display: inline-block;
+                        transition: background-color 0.6s ease;
+                        &:hover{
+                            @include slideshoe_dot;
+                        }
+                    }
+                    .active{
+                        @include slideshoe_dot;
+                    }
+                }
+            }
+            }
+        }
+
+    }
+
+    .portfolio{
+        background-image: url(../images/home/portfolio_1.png);
+        background-size: 100% 100%;
+        &-heading{
+            padding: 30px 0 0 0;
+            text-align: center;
+            .top-heading{
+                @include text-property($size:40px,$color:$secondary-text-color
+                ,$font:Barlow-semi-bold);
+            }
+            .horizontal-line{
+               @include headingLine($background:$secondary-text-color);
+            }
+
+        }
+       
+        &-para{
+            text-align: center;
+            &-text{
+            @include text-property($size:18px,$text-transform:unset,
+            $font:Barlow-regular);
+            line-height: 2;
+                      }
+            width: 40%;
+            margin:0 30% 0 30%;
+            &-text-button{
+                margin:40px;
+             @include textButton($background:transparent,$width:40%);
+             border:2px solid $secondary-text-color;
+            }
+        }
+    }
+
+    .getintouch{
+        background-image: url(../images/home/getintouch.jpg);
+        background-size: 100% 100%;
+        &-heading{
+            padding: 30px 0 0 0;
+            text-align: center;
+            .top-heading{
+                @include text-property($size:40px,$color:$text-button-color
+                ,$font:Barlow-semi-bold);
+            }
+            .horizontal-line{
+               @include headingLine($background:$secondary-text-color);
+            }
+
+        }
+       
+        &-para{
+            text-align: center;
+            &-text{
+            @include text-property($size:18px,$text-transform:unset,
+            $font:Barlow-regular);
+            line-height: 2;
+                      }
+            width: 40%;
+            margin:0 30% 0 30%;
+            &-contact-us{
+                @include layout($direction:row,$justify:space-between);
+                .getintouch-para-address{
+                   
+                    &-icon{
+                        padding:20px;
+                    }
+                    &-text{
+                        text-align: center;
+                        @include text-property($size:18px,$text-transform:unset,
+                        $font:Barlow-regular);
+                        line-height: 2;
+                    }
+                }
+                .getintouch-para-contact{
+                   
+                    &-icon{
+                        padding:20px;
+                    }
+                    &-text{
+                        text-align: center;
+                        @include text-property($size:18px,$text-transform:unset,
+                        $font:Barlow-regular);
+                        line-height: 2;
+                    }
+                }
+                
+            }
+            &-text-button{
+                margin:40px;
+             @include textButton($background:transparent,$width:40%);
+             border:2px solid $secondary-text-color;
+            }
+        }
+    }
+
+    .footer{
+        padding:40px;
+        font-family: Barlow-semi-bold;
+        @include layout($direction:column,$justify:center);
+        &-logo{
+            object-fit: contain;
+        }
+        &-privacy-text{
+            text-align: center;
+            padding:30px;
+            span{
+                padding:0 40px 0 40px;
+                border-left: 1px solid $primary-text-color;
+                border-right: 1px solid $primary-text-color;
+                white-space: nowrap;
+            }
+        }
+        &-copyright-text{
+            text-align: center;
+        }
+    }
+}
+
+
+
+.borderHori {
+    border-bottom: 1px solid  $about-us-border-color;
+  }
+
+  .borderVert {
+    border-left: 1px solid $about-us-border-color;
+   border-right: 1px solid $about-us-border-color;
+ }
+
+ .know-text{
+    color:$text-button-color !important;
+}
+ @import '__media.scss';

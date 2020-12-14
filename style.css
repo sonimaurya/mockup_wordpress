@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/*
+Theme Name: wordpress theme
+Author: Soni Maurya
+Description:wordpress theme version 1.0
+Requires PHP: 5.2.4
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: wordpresstheme
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+
+.header-nav-menu ul{
+ list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .header-nav-menu .header-nav-menu-ul li {
+    margin: 10px;
+  }
+
+  .wrapper .header-nav-menu .header-nav-menu-ul li a {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #2e2418;
+    font-family: Barlow-medium-bold;
+    text-decoration: none;
+  }
+  
+  .wrapper .header-nav-menu .header-nav-menu-ul li a:hover {
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: Barlow-bold;
+  }
+  .wrapper .header-nav-menu .header-nav-menu-ul .current_page_item{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: Barlow-bold;  
+  }
+.know-text{
+	color:#e27f21 !important;
+}
+  @media only screen and (min-width : 280px) and (max-width : 768px) {
+    .header-nav-menu ul{
+      display: none;
+    }
+  }
+
+           

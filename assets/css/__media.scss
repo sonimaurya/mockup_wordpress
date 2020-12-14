@@ -1,0 +1,151 @@
+@media only screen and (min-width : 280px) and (max-width : 768px) {
+.wrapper{
+    .header{
+        background-image: url(../images/home/banner-mobile.jpg);
+        &-nav{
+            .mobile-menu{
+                position: relative;
+                display:block;
+                .fa-bars{
+                    color:$secondary-text-color;
+                    cursor: pointer;
+                }
+                ul{
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+                    list-style: none;
+                    padding: 20px;
+                    right: 0;
+                    background-color: $text-button-color;
+                    li{
+                        padding: 10px 20px;
+                        a{
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            color: $secondary-text-color;
+                            text-align: center;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+            margin: 2px 20px 0 20px;
+            &-menu{
+                &-ul{
+                    display:none;
+                }
+            }
+        }
+    }
+    .services{
+        height: 100%;
+        &-about-us{
+            flex-direction: column;
+            &-box{
+                flex-direction: column;
+                &-card{
+                    width: 100%;
+                    &:hover{
+                        background-color:#fcf2e8;
+                    }
+                }
+                .borderHori:not(:last-child){
+                    border-bottom: 1px solid $about-us-border-color;
+                }
+                .borderVert {
+                    border-left: none;
+                   border-right: none;
+                   
+                   
+                 }
+                 .borderVert:not(:last-child){
+                    border-bottom: 1px solid $about-us-border-color;
+                 }
+            }
+        }
+        &-products{
+        &-box{
+            padding:5%;
+            flex-direction: column;
+            &-l{
+                width: 100%;
+                margin-bottom: 5%;
+                .para{
+                    padding:10px;
+                    &-button{
+                        width:50%;
+                    }
+                }
+            }
+            &-r{
+                width: 100%;
+                .services-products-slideshow{
+                    margin-bottom: -8%;
+                }
+            }
+        }}
+    }
+    .portfolio-para{
+        width: 100%;
+        padding:10px;
+        margin:0;
+        &-text-button{
+            width:50%;
+        }
+    }
+    .getintouch{
+        background-image: url(../images/home/getintouch_mobile.jpg);
+        &-para{
+            width: 100%;
+            margin:0;
+            padding:10px;
+           &-contact-us{
+            flex-direction: column;
+            
+           }
+           &-text-button{
+               width:50%;
+           }
+        }
+    }
+    .header-text-button{
+        width:50%;
+    }
+    .portfolio{
+        background-image: url(../images/home/portfolio_1_mobile.png);
+    }
+}
+.fa-bars {
+color: $secondary-text-color;
+}
+
+}
+
+@media screen and (min-width:540px) and (max-width:540px){
+    .wrapper{
+        .services-products-box-r{
+            .slideshow-dot-box{
+                margin-top: 51px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:280px) and (max-width:280px){
+    .wrapper{
+        .header{
+            &-nav-ul{
+                display: none ;
+            }
+        }
+        .services-about-us-box-card{
+            padding: 40px 0;
+    }
+     .services-products-box-r .services-products-slideshow-slides .slideshow-img{
+        width: 100%;
+    }
+    }
+
+}
