@@ -130,7 +130,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
 }
 
 #menu-primary .menu-item-has-children:hover>.sub-menu{
-	display:block;
+	//display:block;
 }.header-nav-menu-ul .current-menu-item>a{
 	color:#ffffff !important;
 }
@@ -166,7 +166,7 @@ Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-me
   color:#ffffff;
 }
 #menu-primary li a:hover {
-  color:#ffffff;
+  color:#ffffff !important;
 }
 .wrapper .header .header-side-nav{
   display: block;

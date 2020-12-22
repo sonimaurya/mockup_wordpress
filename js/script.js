@@ -7,10 +7,11 @@
       //$('#dropdown-mobile').removeClass("active");
     //});
   });
-   $('#menu-primary li').mouseover(function(){
-       if ($('li').is('.sub-menu')) {
+   $('#menu-primary .menu-item-has-children').mouseover(function(){
+   // console.log($("#menu-primary li .sub-menu").length>1);
+    //if($("#menu-primary li .sub-menu").length>1){
        $('.sub-menu').show(1000);
-       }
+     //  }
   });
    $(document.body).click( function(e) {
     e.preventDefault();
